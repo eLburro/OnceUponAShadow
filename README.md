@@ -15,7 +15,10 @@ Unity3d project for the multi-modal interaction course
   * Edit -> Project Settings -> Editor -> Asset Serialization - Mode: Select "Force Text"
   
 ## Update your local project
-TODO
+Before starting to work open the GitHub Desktop and click on "Pull origin" to update your local version of the working repository.
 
 ## Commit your changes
-When you start making changes go to GitHub Desktop and to the "Changes" tab. You will see all the changed files listed. Fill in a meaningfull commit message (This is what everybody sees) and description. It is better to write more than less. Click and commit. Now the changes are committed to your local git version control. To push it back to the server version on GitHub you need to
+When you start making changes go to GitHub Desktop and to the "Changes" tab. You will see all the changed files listed. Fill in a meaningfull commit message (This is what everybody sees) and description. It is better to write more than less. Click and commit. Now the changes are committed to your local git version control. To push it back to the server version on GitHub you need to click on "Push origin". Now all your changes should be available on this site.
+
+## Questions
+Please contact your git expert.
