@@ -7,6 +7,7 @@ using UnityEngine.Networking.NetworkSystem;
 
 public class PlayerManager : NetworkManager
 {
+    public Button narratorButton;
     public Button dragonButton;
     public Button knightButton;
     public Button princessButton;
@@ -18,6 +19,7 @@ public class PlayerManager : NetworkManager
     // Use this for initialization
     void Start()
     {
+        narratorButton.onClick.AddListener(delegate { AvatarPicker(narratorButton.name); });
         dragonButton.onClick.AddListener(delegate { AvatarPicker(dragonButton.name); });
         knightButton.onClick.AddListener(delegate { AvatarPicker(knightButton.name); });
         princessButton.onClick.AddListener(delegate { AvatarPicker(princessButton.name); });
@@ -28,14 +30,17 @@ public class PlayerManager : NetworkManager
     {
         switch (buttonName)
         {
-            case "Dragon":
+            case "Narrator":
                 avatarIndex = 0;
                 break;
-            case "Knight":
+            case "Dragon":
                 avatarIndex = 1;
                 break;
-            case "Princess":
+            case "Knight":
                 avatarIndex = 2;
+                break;
+            case "Princess":
+                avatarIndex = 3;
                 break;
         }
 

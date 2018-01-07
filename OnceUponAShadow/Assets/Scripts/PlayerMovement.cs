@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    [SyncVar]
     public bool m_FacingRight = false;
 
     private float m_MaxSpeed = 10f;
@@ -16,11 +17,13 @@ public class PlayerMovement : NetworkBehaviour
     }
 
 	void Update () {
-        if (isLocalPlayer)
+        if (!isLocalPlayer)
         {
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            this.Move(h);
+            return;
         }
+
+        float h = CrossPlatformInputManager.GetAxis("Horizontal");
+        Move(h);
     }
 
     private void Move(float move)
@@ -28,7 +31,7 @@ public class PlayerMovement : NetworkBehaviour
         m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
         if (move > 0 && !m_FacingRight)
-        {
+        {           
             Flip();
         }
         else if (move < 0 && m_FacingRight)
@@ -37,7 +40,7 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
-    private void Flip()
+    void Flip()
     {
         m_FacingRight = !m_FacingRight;
 
