@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="329px" height="698px" viewBox="0 0 329 698" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>sword</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="prince" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="princ-with-sword-copy" transform="translate(-195.000000, 0.000000)" fill-rule="nonzero">
+            <g id="sword" transform="translate(344.191261, 350.230992) scale(-1, 1) rotate(-21.000000) translate(-344.191261, -350.230992) translate(80.691261, 76.230992)">
+                <path d="M148,336 L189,308 L269,234 L299,213 L377,135 L383,111 L527,0 L418,149 L399,156 L320,234 L304,268 L233,346 L206,386 L179,386 L163,401 L174,411 L189,406 L189,417 L153,426 L168,461 L226,456 L211,477 L163,491 L129,449 L121,439 L39,520 L34,537 C29.5083826,541.34491 25.8417159,544.011577 23,545 C20.1582841,545.988423 16.1582841,546.988423 11,548 L3,545 L0,537 C1.03944754,531.641519 2.03944754,527.641519 3,525 C3.96055246,522.358481 6.62721913,519.025147 11,515 L23,508 L101,426 L95,417 L39,392 L46,341 L69,322 L74,378 L113,392 L113,360 L129,355 L129,369 L137,378 L148,369 L148,336 Z" id="Path-17" stroke="#000000" fill="#000000"></path>
+                <circle id="Oval" fill="#FFFFFF" cx="19" cy="528" r="7"></circle>
+                <polygon id="Triangle" stroke="#FFFFFF" fill="#FFFFFF" transform="translate(445.952358, 82.319197) rotate(45.000000) translate(-445.952358, -82.319197) " points="445.952358 17.3191973 448.952358 147.319197 442.952358 147.319197"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
