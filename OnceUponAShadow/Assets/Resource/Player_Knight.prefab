@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212303534714497902}
   - component: {fileID: 61637051765096768}
   - component: {fileID: 50793762357018250}
+  - component: {fileID: 95896387619723412}
   - component: {fileID: 114134847697778114}
   - component: {fileID: 114346789813546192}
   - component: {fileID: 114171394614312178}
+  - component: {fileID: 114632686882755384}
   - component: {fileID: 82340527599363074}
   m_Layer: 0
   m_Name: Player_Knight
@@ -40,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1941897945209198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.59, y: -3.09, z: -18}
+  m_LocalPosition: {x: 1.61, y: 0.42, z: -18}
   m_LocalScale: {x: 0.3425708, y: 0.3425708, z: 0.3425708}
   m_Children: []
   m_Father: {fileID: 0}
@@ -171,6 +173,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95896387619723412
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941897945209198}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6de6f9117ada0f45aed886d1e6ec23e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114134847697778114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +255,25 @@ MonoBehaviour:
     i15: 212
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114632686882755384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941897945209198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95896387619723412}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!212 &212303534714497902
 SpriteRenderer:
   m_ObjectHideFlags: 1
