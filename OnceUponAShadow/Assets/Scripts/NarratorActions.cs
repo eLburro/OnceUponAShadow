@@ -4,17 +4,26 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class NarratorActions : NetworkManager
+public class NarratorActions : NetworkBehaviour
 {
-    public Canvas canvasObject;
+    public GameObject actionCanvas;
+    public Button releaseFireButton;
 
-    // Use this for initialization
+    private Button[] actionButtons;
+
     void Start () {
-        //canvasObject.enable = true;	
-	}
+        GameObject go = Instantiate(actionCanvas, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        actionButtons = go.GetComponentsInChildren<Button>();
+        
+        foreach (Button btn in actionButtons)
+        {
+            // Release Fire
+            if (btn.name == releaseFireButton.name) btn.onClick.AddListener(() => ReleaseFire());
+        }
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void ReleaseFire()
+    {
+        Debug.Log("Release Fire");
+    }
 }
