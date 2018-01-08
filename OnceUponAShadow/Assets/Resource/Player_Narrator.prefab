@@ -52,9 +52,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 863181611a4baee4b83a2d8d1d1bc02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionCanvas: {fileID: 1245044308065738, guid: 4605ccd73b756cc47b7c82299558eabf,
+  actionCanvas: {fileID: 1440031792553126, guid: 4605ccd73b756cc47b7c82299558eabf,
     type: 2}
-  releaseFireButton: {fileID: 114175905782001802, guid: 4605ccd73b756cc47b7c82299558eabf,
+  releaseFireButton: {fileID: 114560896677780710, guid: 4605ccd73b756cc47b7c82299558eabf,
+    type: 2}
+  openGateButton: {fileID: 114154733692572754, guid: 4605ccd73b756cc47b7c82299558eabf,
     type: 2}
 --- !u!114 &114592191478215620
 MonoBehaviour:
