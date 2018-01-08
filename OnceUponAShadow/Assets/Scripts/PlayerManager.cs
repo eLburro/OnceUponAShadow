@@ -45,7 +45,8 @@ public class PlayerManager : NetworkManager
         }
 
         playerPrefab = spawnPrefabs[avatarIndex];
-		networkManager.StartClient();
+		if(avatarIndex == 0) networkManager.StartHost();
+		else networkManager.StartClient();
     }
 
     /// Copied from Unity's original NetworkManager script except where noted
