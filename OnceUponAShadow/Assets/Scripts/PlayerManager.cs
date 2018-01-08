@@ -15,7 +15,7 @@ public class PlayerManager : NetworkManager
     int avatarIndex = 0;
 
     public Canvas characterSelectionCanvas;
-
+	private NetworkManager networkManager;
     // Use this for initialization
     void Start()
     {
@@ -23,7 +23,7 @@ public class PlayerManager : NetworkManager
         dragonButton.onClick.AddListener(delegate { AvatarPicker(dragonButton.name); });
         knightButton.onClick.AddListener(delegate { AvatarPicker(knightButton.name); });
         princessButton.onClick.AddListener(delegate { AvatarPicker(princessButton.name); });
-
+		networkManager = GetComponent<NetworkManager> ();
     }
 
     void AvatarPicker(string buttonName)
@@ -45,6 +45,7 @@ public class PlayerManager : NetworkManager
         }
 
         playerPrefab = spawnPrefabs[avatarIndex];
+		networkManager.StartClient();
     }
 
     /// Copied from Unity's original NetworkManager script except where noted
