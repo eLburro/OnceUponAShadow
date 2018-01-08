@@ -14,7 +14,7 @@ public class DebugText : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		float scale = (((Input.acceleration.z-0.5f)*0.1f)+0.1f)+0.2f;
+		float scale = 0.5f-(Mathf.Max(-Input.acceleration.z,0.5f)/2);//(((Input.acceleration.z-0.5f)*0.1f)+0.1f)+0.2f;
 		textF.text = "inputX = "+Input.acceleration.x;
 		textF.text += "\ninputY = "+Input.acceleration.y;
 		textF.text += "\ninputZ = "+Input.acceleration.z;

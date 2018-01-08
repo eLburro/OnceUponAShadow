@@ -20,10 +20,10 @@ public class AccelerometerInputBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		//transform.Translate(0, 0, (Input.acceleration.z*-0.1f)+0.9f);
-		distance = (((Input.acceleration.z-0.5f)*0.1f)+0.1f)+0.2f;
-		transform.localScale = new Vector3(scale,scale, 0);
-		transform.Translate(0, scale, 0);
-		rb.velocity = new Vector2(6*Input.acceleration.x, -3*(Input.acceleration.z+0.5f));
+		distance = 0.45f-(Mathf.Max(-Input.acceleration.z,0.5f)/3);
+		transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(distance,distance, 0), Time.deltaTime);
+		//transform.Translate(0, distance, 0);
+		rb.velocity = new Vector2(6*Input.acceleration.x, distance); //-3*(Input.acceleration.z+0.5f)
 
 		/*for (int i = 0; i < Input.touchCount; ++i) {
 			if (Input.GetTouch (i).phase == TouchPhase.Began) {*/
