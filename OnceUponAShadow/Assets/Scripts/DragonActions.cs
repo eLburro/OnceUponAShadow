@@ -70,7 +70,7 @@ public class DragonActions : NetworkBehaviour
         PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
 
         // Add velocity to the fireball
-        float veloX = (playerMovement.m_FacingRight) ? 30f : -30f;
+        float veloX = (playerMovement.m_FacingRight) ? 20f : -20f;
         Rigidbody2D rigidbody2D = fireball.GetComponent<Rigidbody2D>();
         rigidbody2D.velocity = new Vector2(veloX, rigidbody2D.velocity.y);
 
@@ -83,7 +83,7 @@ public class DragonActions : NetworkBehaviour
 
         NetworkServer.Spawn(fireball);
 
-        // Destroy the fireball after 4 seconds
+        // Destroy the fireball after 1 second
         Destroy(fireball, 1.0f);
     }
 }
