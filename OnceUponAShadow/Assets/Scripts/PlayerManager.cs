@@ -45,8 +45,9 @@ public class PlayerManager : NetworkManager
         }
 
         playerPrefab = spawnPrefabs[avatarIndex];
-		if(avatarIndex == 0) networkManager.StartHost();
-		else networkManager.StartClient();
+
+        if(avatarIndex == 0) networkManager.StartHost();
+        else networkManager.StartClient();
     }
 
     /// Copied from Unity's original NetworkManager script except where noted
@@ -96,27 +97,31 @@ public class PlayerManager : NetworkManager
 
         GameObject player;
 
-        // if princess spawn her on the tower
-        if (id == 3)
+        // change spawn positions
+        switch (id)
         {
-            player = (GameObject)Instantiate(playerPrefab, new Vector3(-20, 0, 0), Quaternion.identity);
-        }
-        else
-        {
-            Transform startPos = GetStartPosition();
-
-            if (startPos != null)
-            {
+            case 0:
+                Transform startPos = GetStartPosition();
                 player = (GameObject)Instantiate(playerPrefab, startPos.position, startPos.rotation);
-            }
-            else
-            {
+                break;
+
+            case 1:
+                player = (GameObject)Instantiate(playerPrefab, new Vector3(-10, 0, 0), Quaternion.identity);
+                break;
+
+            case 2:
+                player = (GameObject)Instantiate(playerPrefab, new Vector3(10, 0, 0), Quaternion.identity);
+                break;
+
+            case 3:
+                player = (GameObject)Instantiate(playerPrefab, new Vector3(-20, 0, 0), Quaternion.identity);
+                break;
+
+            default:
                 player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
-            }
+                break;
         }
         
-        
-
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
 }
