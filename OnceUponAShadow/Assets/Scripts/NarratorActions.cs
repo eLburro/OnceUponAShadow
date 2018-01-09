@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class NarratorActions : NetworkBehaviour
 {
     public GameObject actionCanvas;
-    public Button releaseFireButton;
     public Button openGateButton;
 
     private Button[] actionButtons;
@@ -18,17 +17,9 @@ public class NarratorActions : NetworkBehaviour
         
         foreach (Button btn in actionButtons)
         {
-            // Release Fire
-            if (btn.name == releaseFireButton.name) btn.onClick.AddListener(() => ReleaseFire());
-
             // Open Castle Gate
             if (btn.name == openGateButton.name) btn.onClick.AddListener(() => OpenCastleGate());
         }
-    }
-	
-    void ReleaseFire()
-    {
-        Debug.Log("Release Fire");
     }
 
     void OpenCastleGate()
