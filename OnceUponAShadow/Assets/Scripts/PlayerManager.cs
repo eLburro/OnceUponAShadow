@@ -95,15 +95,27 @@ public class PlayerManager : NetworkManager
         /// *** end of additions
 
         GameObject player;
-        Transform startPos = GetStartPosition();
-        if (startPos != null)
+
+        // if princess spawn her on the tower
+        if (id == 3)
         {
-            player = (GameObject)Instantiate(playerPrefab, startPos.position, startPos.rotation);
+            player = (GameObject)Instantiate(playerPrefab, new Vector3(-20, 0, 0), Quaternion.identity);
         }
         else
         {
-            player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            Transform startPos = GetStartPosition();
+
+            if (startPos != null)
+            {
+                player = (GameObject)Instantiate(playerPrefab, startPos.position, startPos.rotation);
+            }
+            else
+            {
+                player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            }
         }
+        
+        
 
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }

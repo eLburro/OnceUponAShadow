@@ -33,25 +33,27 @@ public class PlayerMovement : NetworkBehaviour
     private void Move()
     {
 		float xVel = CrossPlatformInputManager.GetAxis("Horizontal");
-		if(Input.accelerationEventCount > 0 && Mathf.Abs(Input.acceleration.x) > 0) {
+		if(Input.accelerationEventCount > 0 && Mathf.Abs(Input.acceleration.x) > 0.034) {
 			xVel = 6 * Input.acceleration.x;
 			m_Rigidbody2D.velocity = new Vector2(xVel * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 		}
 		else m_Rigidbody2D.velocity = new Vector2(xVel * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
-        if (xVel > 0 && !m_FacingRight)
+        if (xVel > 0.2 && !m_FacingRight)
         {           
             Flip();
+			CmdFlip ();
         }
-        else if (xVel < 0 && m_FacingRight)
+        else if (xVel < -0.2 && m_FacingRight)
         {
             Flip();
+			CmdFlip ();
         }
 
-		if (xVel != 0) {
-			m_Anim.SetBool("moving", true);
+		if (xVel > 0.2 || xVel < -0.2) {
+			//m_Anim.SetBool("moving", true);
 		} else {
-			m_Anim.SetBool("moving", false);
+			//m_Anim.SetBool("moving", false);
 		}
     }
 
@@ -63,4 +65,10 @@ public class PlayerMovement : NetworkBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+	[Command]
+	void CmdFlip()	{
+		Flip ();
+	}
+
 }
