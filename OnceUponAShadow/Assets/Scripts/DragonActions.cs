@@ -77,9 +77,12 @@ public class DragonActions : NetworkBehaviour
 
         if (playerMovement.m_FacingRight)
         {
-            Vector3 theScale = rigidbody2D.gameObject.transform.localScale;
-            theScale.x *= -1;
-            rigidbody2D.gameObject.transform.localScale = theScale;
+            // TODO: Fireball only changes on host
+            /*SpriteRenderer sprite = fireball.GetComponent<SpriteRenderer>();
+            sprite.flipX = true;*/
+            Vector3 localScale = fireball.transform.localScale;
+            localScale.x *= -1;
+            fireball.transform.localScale = localScale;
         }
 
         NetworkServer.Spawn(fireball);
