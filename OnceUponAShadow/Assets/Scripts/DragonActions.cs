@@ -6,48 +6,84 @@ using UnityEngine.Networking;
 
 public class DragonActions : NetworkBehaviour
 {
-	private AudioSource audioSource;
-	NetworkView nView;
-	private Animator m_Anim;
+    public GameObject fireballPrefab;
+    public Transform fireballSpawn;
 
-	void Start()
-	{
-		audioSource = GetComponent<AudioSource>();
-		nView = GetComponent<NetworkView>();
-		m_Anim = GetComponent<Animator>();
-	}
+    private AudioSource audioSource;
+    NetworkView nView;
+    private Animator m_Anim;
 
-	void Update()
-	{
-		if (!isLocalPlayer)
-		{
-			return;
-		}
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        nView = GetComponent<NetworkView>();
+        m_Anim = GetComponent<Animator>();
+    }
 
-		if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
-		{
-			SpitFire ();
-		}
-	}
+    void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
 
-	void PlaySound()
-	{
-		audioSource.volume = 1f;
-		audioSource.Play();
+        if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
+        {
+            SpitFire();
+        }
 
-	}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CmdFireball();
+        }
+    }
 
-	void SpitFire() {
-		PlaySound ();
-		CmdPlaySound ();
-	}
+    void PlaySound()
+    {
+        audioSource.volume = 1f;
+        audioSource.Play();
 
-	// Play that soundsource over the network.
-	[Command]
-	void CmdPlaySound()
-	{
-		audioSource.volume = 0.5f;
-		audioSource.Play();
+    }
 
-	}
+    void SpitFire()
+    {
+        PlaySound();
+        CmdPlaySound();
+        CmdFireball();
+    }
+
+    // Play that soundsource over the network.
+    [Command]
+    void CmdPlaySound()
+    {
+        audioSource.volume = 0.5f;
+        audioSource.Play();
+
+    }
+
+    [Command]
+    void CmdFireball()
+    {
+        var fireball = (GameObject)Instantiate(fireballPrefab, fireballSpawn.position, fireballSpawn.rotation);
+
+        // get shooting direction
+        PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
+
+        // Add velocity to the fireball
+        float veloX = (playerMovement.m_FacingRight) ? 30f : -30f;
+        Rigidbody2D rigidbody2D = fireball.GetComponent<Rigidbody2D>();
+        rigidbody2D.velocity = new Vector2(veloX, rigidbody2D.velocity.y);
+
+        if (playerMovement.m_FacingRight)
+        {
+            Vector3 theScale = rigidbody2D.gameObject.transform.localScale;
+            theScale.x *= -1;
+            rigidbody2D.gameObject.transform.localScale = theScale;
+        }
+
+        NetworkServer.Spawn(fireball);
+
+        // Destroy the fireball after 4 seconds
+        Destroy(fireball, 1.0f);
+    }
 }

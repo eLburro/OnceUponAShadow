@@ -46,8 +46,8 @@ public class PlayerManager : NetworkManager
 
         playerPrefab = spawnPrefabs[avatarIndex];
 
-        if(avatarIndex == 0) networkManager.StartHost();
-        else networkManager.StartClient();
+        /*if(avatarIndex == 0) networkManager.StartHost();
+        else networkManager.StartClient();*/
     }
 
     /// Copied from Unity's original NetworkManager script except where noted
@@ -101,8 +101,7 @@ public class PlayerManager : NetworkManager
         switch (id)
         {
             case 0:
-                Transform startPos = GetStartPosition();
-                player = (GameObject)Instantiate(playerPrefab, startPos.position, startPos.rotation);
+                player = (GameObject)Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
                 break;
 
             case 1:
