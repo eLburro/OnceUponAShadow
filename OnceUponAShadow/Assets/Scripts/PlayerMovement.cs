@@ -15,6 +15,7 @@ public class PlayerMovement : NetworkBehaviour
 	private Animator m_Anim;
 
 
+
     void Start () {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		m_Anim = GetComponent<Animator>();
@@ -46,6 +47,12 @@ public class PlayerMovement : NetworkBehaviour
         {
             Flip();
         }
+
+		if (xVel != 0) {
+			m_Anim.SetBool("moving", true);
+		} else {
+			m_Anim.SetBool("moving", false);
+		}
     }
 
     void Flip()
