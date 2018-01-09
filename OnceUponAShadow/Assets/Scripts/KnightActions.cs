@@ -37,7 +37,7 @@ public class KnightActions : NetworkBehaviour{
         }
         
         if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
-        {
+		{
             //Jump();
             CmdPlaySound();
             playSound();
@@ -47,28 +47,23 @@ public class KnightActions : NetworkBehaviour{
 		lowPassValue = Vector3.Lerp(lowPassValue, acceleration, lowPassFilterFactor);
 		Vector3 deltaAcceleration = acceleration - lowPassValue;
 
-		if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
-		{
-			CmdPlaySound();
-			playSound();
+		if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold) {
+			putOutFire ();
 		}	
 	}
 
-    /*void Jump()
-    {
-        m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 6);
-    }*/
+	void putOutFire() {
 
-    /*public void playSound()
-	{
-		nView.RPC("rpcPlaySound", RPCMode.Others);
-	}*/
+	}
 
-    void playSound()
+	void catchFire() {
+
+	}
+
+	void playSound()
     {
         audioSource.volume = 1f;
         audioSource.Play();
-
     }
 
     // Play that soundsource over the network.
@@ -77,6 +72,5 @@ public class KnightActions : NetworkBehaviour{
     {
         audioSource.volume = 0.5f;
         audioSource.Play();
-
     }
 }

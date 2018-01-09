@@ -26,27 +26,20 @@ public class DragonActions : NetworkBehaviour
 
 		if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
 		{
-			//Jump();
-			CmdPlaySound();
-			playSound();
+			SpitFire ();
 		}
 	}
 
-	/*void Jump()
-    {
-        m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 6);
-    }*/
-
-	/*public void playSound()
-	{
-		nView.RPC("rpcPlaySound", RPCMode.Others);
-	}*/
-
-	void playSound()
+	void PlaySound()
 	{
 		audioSource.volume = 1f;
 		audioSource.Play();
 
+	}
+
+	void SpitFire() {
+		PlaySound ();
+		CmdPlaySound ();
 	}
 
 	// Play that soundsource over the network.
