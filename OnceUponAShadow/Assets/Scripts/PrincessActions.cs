@@ -33,7 +33,7 @@ public class PrincessActions : NetworkBehaviour	{
 
 		if (deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold)
 		{
-			putOutFire ();
+			//putOutFire ();
 		}	
 	}
 
