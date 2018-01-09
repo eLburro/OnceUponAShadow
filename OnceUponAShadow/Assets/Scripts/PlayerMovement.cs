@@ -51,9 +51,9 @@ public class PlayerMovement : NetworkBehaviour
         }
 
 		if (xVel > 0.2 || xVel < -0.2) {
-			m_Anim.SetBool("moving", true);
+			//m_Anim.SetBool("moving", true);
 		} else {
-			m_Anim.SetBool("moving", false);
+			//m_Anim.SetBool("moving", false);
 		}
     }
 
@@ -68,11 +68,6 @@ public class PlayerMovement : NetworkBehaviour
 
 	[Command]
 	void CmdFlip()	{
-		/*m_FacingRight = !m_FacingRight;
-
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;*/
 		Flip ();
 	}
 
