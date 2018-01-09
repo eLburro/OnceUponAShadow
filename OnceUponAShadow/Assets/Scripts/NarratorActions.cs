@@ -8,6 +8,7 @@ public class NarratorActions : NetworkBehaviour
 {
     public GameObject actionCanvas;
     public Button openGateButton;
+    public Button killDragonButton;
 
     private Button[] actionButtons;
 
@@ -19,7 +20,15 @@ public class NarratorActions : NetworkBehaviour
         {
             // Open Castle Gate
             if (btn.name == openGateButton.name) btn.onClick.AddListener(() => OpenCastleGate());
+
+            // Kill the dragon
+            if (btn.name == killDragonButton.name) btn.onClick.AddListener(() => KillTheDragon());
         }
+    }
+
+    void KillTheDragon()
+    {
+        Debug.Log("Kill the Dragon");
     }
 
     void OpenCastleGate()

@@ -54,9 +54,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionCanvas: {fileID: 1440031792553126, guid: 4605ccd73b756cc47b7c82299558eabf,
     type: 2}
-  releaseFireButton: {fileID: 114560896677780710, guid: 4605ccd73b756cc47b7c82299558eabf,
+  openGateButton: {fileID: 114647041530641892, guid: 4605ccd73b756cc47b7c82299558eabf,
     type: 2}
-  openGateButton: {fileID: 114154733692572754, guid: 4605ccd73b756cc47b7c82299558eabf,
+  killDragonButton: {fileID: 114818769976967934, guid: 4605ccd73b756cc47b7c82299558eabf,
     type: 2}
 --- !u!114 &114592191478215620
 MonoBehaviour:

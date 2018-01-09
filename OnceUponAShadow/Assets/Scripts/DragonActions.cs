@@ -47,6 +47,7 @@ public class DragonActions : NetworkBehaviour
 
     void SpitFire()
     {
+        // TODO merge spit fire & fireball
         PlaySound();
         CmdPlaySound();
         CmdFireball();
@@ -83,7 +84,7 @@ public class DragonActions : NetworkBehaviour
 
         NetworkServer.Spawn(fireball);
 
-        // Destroy the fireball after 1 second
-        Destroy(fireball, 1.0f);
+        // Destroy the fireball after half a second
+        Destroy(fireball, 0.5f);
     }
 }
