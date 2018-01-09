@@ -35,9 +35,14 @@ public class NarratorActions : NetworkBehaviour
     {
         Debug.Log("Open Gate");
 
+        // open gate
         GameObject go = GameObject.Find("Sprite_Castle");
         Animator m_GateAnim = go.GetComponent<Animator>();
 
         m_GateAnim.SetBool("isOpen", true);
+
+        // release princess
+        GameObject go2 = GameObject.Find("Env_Castle_Ground");
+        NetworkServer.Destroy(go2);
     }
 }
