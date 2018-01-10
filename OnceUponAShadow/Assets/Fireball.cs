@@ -12,7 +12,7 @@ public class Fireball: MonoBehaviour
         {
             // set Knight on fire
             Animator animator = hit.GetComponent<Animator>();
-            //animator.SetBool("isOnFire", true);
+            animator.SetBool("onFire", true);
             Debug.Log("Knight is hit");
         }
 
