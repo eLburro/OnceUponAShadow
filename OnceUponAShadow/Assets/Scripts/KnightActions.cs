@@ -57,7 +57,10 @@ public class KnightActions : NetworkBehaviour{
 
 	public void catchFire() {
 		m_Anim.SetBool ("onFire", true);
-        Vibration.Vibrate(300);
+
+        if (isLocalPlayer) {
+            Vibration.Vibrate(300);
+        }
     }
 
 	void DrawSword() {
