@@ -85,6 +85,6 @@ public class DragonActions : NetworkBehaviour
         NetworkServer.Spawn(fireball);
 
         // Destroy the fireball after half a second
-        Destroy(fireball, 0.5f);
+        Destroy(fireball, 1.0f);
     }
 }
