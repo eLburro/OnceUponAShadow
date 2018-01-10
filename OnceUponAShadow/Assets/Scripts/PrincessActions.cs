@@ -44,9 +44,11 @@ public class PrincessActions : NetworkBehaviour	{
 
 		if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
 		{
-			//Jump();
+			m_Anim.SetBool ("isScreaming", true);
 			CmdPlaySound();
 			playSound();
+			yield return new WaitForSeconds(2);
+			m_Anim.SetBool ("isScreaming", false);
 		}
 	}
 		

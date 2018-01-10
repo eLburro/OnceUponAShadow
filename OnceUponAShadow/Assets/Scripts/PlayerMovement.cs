@@ -34,7 +34,7 @@ public class PlayerMovement : NetworkBehaviour
     {
 		float xVel = CrossPlatformInputManager.GetAxis("Horizontal");
 		if(Input.accelerationEventCount > 0 && Mathf.Abs(Input.acceleration.x) > 0.034) {
-			xVel = 6 * Input.acceleration.x;
+			xVel = 3 * Input.acceleration.x;
 			m_Rigidbody2D.velocity = new Vector2(xVel * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 		}
 		else m_Rigidbody2D.velocity = new Vector2(xVel * m_MaxSpeed, m_Rigidbody2D.velocity.y);
@@ -50,7 +50,7 @@ public class PlayerMovement : NetworkBehaviour
 			CmdFlip ();
         }
 
-		if (xVel > 0.2 || xVel < -0.2) {
+		if (xVel > 0.4 || xVel < -0.4) {
 			m_Anim.SetBool("isMoving", true);
 		} else {
 			m_Anim.SetBool("isMoving", false);
