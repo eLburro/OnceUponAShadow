@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 82767263738295106}
   - component: {fileID: 95802594336616002}
   - component: {fileID: 114898069795040594}
+  - component: {fileID: 114650140984620592}
   m_Layer: 0
   m_Name: Player_Dragon
   m_TagString: Untagged
@@ -266,6 +267,19 @@ MonoBehaviour:
   fireballPrefab: {fileID: 1980837591458138, guid: 1e8af37d91872c84d85950cb2b127d65,
     type: 2}
   fireballSpawn: {fileID: 4903473201944690}
+--- !u!114 &114650140984620592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818119830345722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6292a674ad41f234388b7ffc63f894e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCanvas: {fileID: 1517698853632630, guid: a849f52d9d0ee6c45b970bf3f3c4ca29,
+    type: 2}
 --- !u!114 &114725695704994368
 MonoBehaviour:
   m_ObjectHideFlags: 1

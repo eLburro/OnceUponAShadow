@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114632686882755384}
   - component: {fileID: 82340527599363074}
   - component: {fileID: 114337929664764136}
+  - component: {fileID: 114557641459037224}
   m_Layer: 0
   m_Name: Player_Knight
   m_TagString: Untagged
@@ -357,6 +358,19 @@ MonoBehaviour:
     i15: 212
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114557641459037224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941897945209198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6292a674ad41f234388b7ffc63f894e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCanvas: {fileID: 1517698853632630, guid: a849f52d9d0ee6c45b970bf3f3c4ca29,
+    type: 2}
 --- !u!114 &114632686882755384
 MonoBehaviour:
   m_ObjectHideFlags: 1

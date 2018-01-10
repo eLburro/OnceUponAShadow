@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 82054864745549160}
   - component: {fileID: 95347349200504518}
   - component: {fileID: 114027443736284194}
+  - component: {fileID: 114889728939621382}
   m_Layer: 0
   m_Name: Player_Princess
   m_TagString: Untagged
@@ -286,6 +287,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FacingRight: 0
+--- !u!114 &114889728939621382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711058591911664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6292a674ad41f234388b7ffc63f894e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCanvas: {fileID: 1517698853632630, guid: a849f52d9d0ee6c45b970bf3f3c4ca29,
+    type: 2}
 --- !u!212 &212627253010385760
 SpriteRenderer:
   m_ObjectHideFlags: 1
