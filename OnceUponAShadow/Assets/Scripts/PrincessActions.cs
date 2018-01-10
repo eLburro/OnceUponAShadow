@@ -47,7 +47,7 @@ public class PrincessActions : NetworkBehaviour	{
 			m_Anim.SetBool ("isScreaming", true);
 			CmdPlaySound();
 			playSound();
-			yield return new WaitForSeconds(2);
+			//yield return new WaitForSeconds(2);
 			m_Anim.SetBool ("isScreaming", false);
 		}
 	}
