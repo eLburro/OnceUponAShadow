@@ -11,8 +11,8 @@ public class Fireball: MonoBehaviour
         if (hit.name == "Player_Knight" || hit.name == "Player_Knight(Clone)")
         {
             // set Knight on fire
-            Animator animator = hit.GetComponent<Animator>();
-            animator.SetBool("onFire", true);
+            KnightActions knightActions = hit.GetComponent<KnightActions>();
+            knightActions.catchFire();
             Debug.Log("Knight is hit");
         }
 

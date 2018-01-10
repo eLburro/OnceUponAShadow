@@ -55,9 +55,10 @@ public class KnightActions : NetworkBehaviour{
 		m_Anim.SetBool ("onFire", false);
 	}
 
-	void catchFire() {
+	public void catchFire() {
 		m_Anim.SetBool ("onFire", true);
-	}
+        Handheld.Vibrate();
+    }
 
 	void DrawSword() {
 		if (m_Anim.GetBool ("swordOut") == true) {
