@@ -33,18 +33,18 @@ public class PlayerMovement : NetworkBehaviour
     private void Move()
     {
 		float xVel = CrossPlatformInputManager.GetAxis("Horizontal");
-		if(Input.accelerationEventCount > 0 && Mathf.Abs(Input.acceleration.x) > 0.034) {
+		if(Input.accelerationEventCount > 0 && Mathf.Abs(Input.acceleration.x) > 0.12) {
 			xVel = 3 * Input.acceleration.x;
 			m_Rigidbody2D.velocity = new Vector2(xVel * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 		}
 		else m_Rigidbody2D.velocity = new Vector2(xVel * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
-        if (xVel > 0.2 && !m_FacingRight)
+        if (xVel > 0.4 && !m_FacingRight)
         {           
             Flip();
 			CmdFlip ();
         }
-        else if (xVel < -0.2 && m_FacingRight)
+        else if (xVel < -0.4 && m_FacingRight)
         {
             Flip();
 			CmdFlip ();
