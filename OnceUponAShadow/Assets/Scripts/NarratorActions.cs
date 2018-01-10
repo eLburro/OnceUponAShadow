@@ -37,16 +37,15 @@ public class NarratorActions : NetworkBehaviour
 
     void MusicToggleValueChanged(Toggle change)
     {
-		if (toggle.isOn && isServer)
-        {
-			audioSource.Play();
-            Debug.Log("Start Music");
-        }
-		else if(isServer)
-        {
-			audioSource.Pause();
-            Debug.Log("Stop Music");
-        }
+		if (isServer) {
+			if (toggle.isOn) {
+				audioSource.Play ();
+				Debug.Log ("Start Music");
+			} else {
+				audioSource.Stop ();
+				Debug.Log ("Stop Music");
+			}
+		}
     }
 
     void KillTheDragon()
