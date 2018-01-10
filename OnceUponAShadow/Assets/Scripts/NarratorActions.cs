@@ -42,7 +42,7 @@ public class NarratorActions : NetworkBehaviour
 			audioSource.Play();
             Debug.Log("Start Music");
         }
-        else
+		else if(isServer)
         {
 			audioSource.Pause();
             Debug.Log("Stop Music");
