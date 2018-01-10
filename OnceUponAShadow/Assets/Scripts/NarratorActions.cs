@@ -12,6 +12,7 @@ public class NarratorActions : NetworkBehaviour
 
     private Button[] actionButtons;
     private Toggle toggle;
+	private AudioSource audioSource;
 
     void Start () {
         if (isServer)
@@ -30,6 +31,7 @@ public class NarratorActions : NetworkBehaviour
             }
 
             toggle.onValueChanged.AddListener(delegate { MusicToggleValueChanged(toggle); });
+			audioSource = GetComponent<AudioSource>();
         }
     }
 
@@ -37,10 +39,12 @@ public class NarratorActions : NetworkBehaviour
     {
         if (toggle.isOn)
         {
+			audioSource.Play();
             Debug.Log("Start Music");
         }
         else
         {
+			audioSource.Pause();
             Debug.Log("Stop Music");
         }
     }
