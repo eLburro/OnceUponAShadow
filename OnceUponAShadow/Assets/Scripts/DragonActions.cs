@@ -10,13 +10,11 @@ public class DragonActions : NetworkBehaviour
     public Transform fireballSpawn;
 
     private AudioSource audioSource;
-    NetworkView nView;
     private Animator m_Anim;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        nView = GetComponent<NetworkView>();
         m_Anim = GetComponent<Animator>();
     }
 
@@ -27,15 +25,13 @@ public class DragonActions : NetworkBehaviour
             return;
         }
 
-        if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
+		if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
         {
             SpitFire();
+			PlaySound ();
+			CmdPlaySound ();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CmdFireball();
-        }
     }
 
     void PlaySound()
@@ -51,6 +47,7 @@ public class DragonActions : NetworkBehaviour
         PlaySound();
         CmdPlaySound();
         CmdFireball();
+		m_Anim.SetBool ("spitsFire", true);
     }
 
     // Play that soundsource over the network.

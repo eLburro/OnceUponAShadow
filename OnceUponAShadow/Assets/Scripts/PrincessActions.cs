@@ -6,7 +6,6 @@ using UnityEngine.Networking;
 
 public class PrincessActions : NetworkBehaviour	{
 	private AudioSource audioSource;
-	NetworkView nView;
 	private Animator m_Anim;
 
 	//shake gesture
@@ -19,7 +18,6 @@ public class PrincessActions : NetworkBehaviour	{
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
-		nView = GetComponent<NetworkView>();
 		m_Anim = GetComponent<Animator>();
 
 		//shake gesture
@@ -44,7 +42,7 @@ public class PrincessActions : NetworkBehaviour	{
 			return;
 		}
 
-		if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
+		if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
 		{
 			//Jump();
 			CmdPlaySound();

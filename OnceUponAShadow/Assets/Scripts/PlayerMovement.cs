@@ -51,9 +51,9 @@ public class PlayerMovement : NetworkBehaviour
         }
 
 		if (xVel > 0.2 || xVel < -0.2) {
-			//m_Anim.SetBool("moving", true);
+			m_Anim.SetBool("isMoving", true);
 		} else {
-			//m_Anim.SetBool("moving", false);
+			m_Anim.SetBool("isMoving", false);
 		}
     }
 

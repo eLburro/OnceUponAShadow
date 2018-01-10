@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 
 public class KnightActions : NetworkBehaviour{
     private AudioSource audioSource;
-    NetworkView nView;
+	private AudioClip screamAudioClip;
     private Animator m_Anim;
 
 	//shake gesture
@@ -20,7 +20,6 @@ public class KnightActions : NetworkBehaviour{
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        nView = GetComponent<NetworkView>();
         m_Anim = GetComponent<Animator>();
 
 		//shake gesture
@@ -36,9 +35,9 @@ public class KnightActions : NetworkBehaviour{
             return;
         }
         
-        if (Input.touchCount > 0 || Input.GetButtonDown("Fire1"))
+		if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
 		{
-            //Jump();
+            DrawSword();
             CmdPlaySound();
             playSound();
         }
@@ -53,11 +52,19 @@ public class KnightActions : NetworkBehaviour{
 	}
 
 	void putOutFire() {
-
+		m_Anim.SetBool ("onFire", false);
 	}
 
 	void catchFire() {
+		m_Anim.SetBool ("onFire", true);
+	}
 
+	void DrawSword() {
+		if (m_Anim.GetBool ("swordOut") == true) {
+			m_Anim.SetBool ("swordOut", false);
+		} else {
+			m_Anim.SetBool ("swordOut", true);
+		}
 	}
 
 	void playSound()
