@@ -37,7 +37,7 @@ public class NarratorActions : NetworkBehaviour
 
     void MusicToggleValueChanged(Toggle change)
     {
-        if (toggle.isOn)
+		if (toggle.isOn && isServer)
         {
 			audioSource.Play();
             Debug.Log("Start Music");
