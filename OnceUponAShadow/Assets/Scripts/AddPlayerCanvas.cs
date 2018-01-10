@@ -27,11 +27,11 @@ public class AddPlayerCanvas : NetworkBehaviour
 
                     if (gameObject.name == "Player_Knight" || gameObject.name == "Player_Knight(Clone)")
                     {
-                        rt.sizeDelta = new Vector2(rt.sizeDelta.y / 4, rt.sizeDelta.y / 4);
+                        rt.sizeDelta = new Vector2(rt.sizeDelta.x / 4, rt.sizeDelta.y / 4);
                     }
                     else
                     {
-                        rt.sizeDelta = new Vector2(rt.sizeDelta.y / 2, rt.sizeDelta.y / 2);
+                        rt.sizeDelta = new Vector2(rt.sizeDelta.x / 2, rt.sizeDelta.y / 2);
                     }
                     
                 }
