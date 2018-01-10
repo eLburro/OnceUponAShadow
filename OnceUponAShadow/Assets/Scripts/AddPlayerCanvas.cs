@@ -10,7 +10,7 @@ public class AddPlayerCanvas : NetworkBehaviour
 
     void Start()
     {
-        if (!isServer)
+        if (!isServer && isLocalPlayer)
         {
             GameObject go = Instantiate(playerCanvas, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
 
