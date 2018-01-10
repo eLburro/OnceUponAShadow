@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 114343141910029208}
   - component: {fileID: 114725695704994368}
   - component: {fileID: 82767263738295106}
+  - component: {fileID: 95802594336616002}
+  - component: {fileID: 114898069795040594}
   m_Layer: 0
   m_Name: Player_Dragon
   m_TagString: Untagged
@@ -201,6 +203,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95802594336616002
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818119830345722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15a24b3bf85a14fb8b39a40deb1c1677, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114343141910029208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,6 +299,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FacingRight: 0
+--- !u!114 &114898069795040594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818119830345722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95802594336616002}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!212 &212716194572779614
 SpriteRenderer:
   m_ObjectHideFlags: 1

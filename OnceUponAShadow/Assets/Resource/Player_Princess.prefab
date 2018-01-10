@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 114087930319869072}
   - component: {fileID: 114243187090923968}
   - component: {fileID: 82054864745549160}
+  - component: {fileID: 95347349200504518}
+  - component: {fileID: 114027443736284194}
   m_Layer: 0
   m_Name: Player_Princess
   m_TagString: Untagged
@@ -172,6 +174,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95347349200504518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711058591911664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c768239d24e34132b103817fd3a08f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114017917226713220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,6 +202,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f185f7af3c40a412fa1a8789019a2aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114027443736284194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711058591911664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95347349200504518}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114087930319869072
 MonoBehaviour:
   m_ObjectHideFlags: 1

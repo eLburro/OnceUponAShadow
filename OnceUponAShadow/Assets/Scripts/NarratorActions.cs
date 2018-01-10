@@ -14,20 +14,23 @@ public class NarratorActions : NetworkBehaviour
     private Toggle toggle;
 
     void Start () {
-        GameObject go = Instantiate(actionCanvas, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-        actionButtons = go.GetComponentsInChildren<Button>();
-        toggle = go.GetComponentInChildren<Toggle>();
-
-        foreach (Button btn in actionButtons)
+        if (isServer)
         {
-            // Open Castle Gate
-            if (btn.name == openGateButton.name) btn.onClick.AddListener(() => OpenCastleGate());
+            GameObject go = Instantiate(actionCanvas, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            actionButtons = go.GetComponentsInChildren<Button>();
+            toggle = go.GetComponentInChildren<Toggle>();
 
-            // Kill the dragon
-            if (btn.name == killDragonButton.name) btn.onClick.AddListener(() => KillTheDragon());
+            foreach (Button btn in actionButtons)
+            {
+                // Open Castle Gate
+                if (btn.name == openGateButton.name) btn.onClick.AddListener(() => OpenCastleGate());
+
+                // Kill the dragon
+                if (btn.name == killDragonButton.name) btn.onClick.AddListener(() => KillTheDragon());
+            }
+
+            toggle.onValueChanged.AddListener(delegate { MusicToggleValueChanged(toggle); });
         }
-
-        toggle.onValueChanged.AddListener(delegate { MusicToggleValueChanged(toggle); });
     }
 
     void MusicToggleValueChanged(Toggle change)
